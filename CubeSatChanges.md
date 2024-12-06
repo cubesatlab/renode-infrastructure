@@ -9,11 +9,21 @@ At a minimum, it should list the files added/modified from the base Renode proje
 - **src/**
     - **Emulator/Peripherals/**
         - **Peripherals/**
+            - **DMA/**
+                - [STM32DMA_Fixed.cs](src/Emulator/Peripherals/Peripherals/DMA/STM32DMA_Fixed.cs)
+                    - Found from a [github issue](https://github.com/renode/renode/issues/616)
+                    - Added in the hopes of addressing issues with startup
+            - **I2C/**
+                - [STMf4_I2C_Fixed.cs](src/Emulator/Peripherals/Peripherals/I2C/STM32_I2C_Fixed.cs)
+                    - Found from a [github issue](https://github.com/renode/renode/issues/616)
+                    - Added in the hopes of addressing issues with startup
             - **Miscellaneous/**
                 - [CF_Syslink.cs](src/Emulator/Peripherals/Peripherals/Miscellaneous/CF_Syslink.cs)
                     - *Adds the device for the CF Syslink*
                 - [EEPROM_24AA64.cs](src/Emulator/Peripherals/Peripherals/Miscellaneous/EEPROM_24AA64.cs)
                     - *Adds EEPROM*
+                    - I've made some additional changes here for debugging
+                    - This file appears to be the source of the problems with initialization of the baseline CF2 firmware
             - **Sensors/**
                 - [BMI088_Accelerometer.cs](src/Emulator/Peripherals/Peripherals/Sensors/BMI088_Accelerometer.cs)
                     - *Adds CF2 accelerometer*
